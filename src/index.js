@@ -1,51 +1,79 @@
 /**
- * Represents a book.
  * @constructor
- * @param {string} title - The title of the book.
- * @param {string} author - The author of the book.
+ * @param {number} id
+ * @param {string} content
+ * @param {boolean} isDone
+ * @param {string} category
+ * @param {Array<string?>} tags
  */
-function Book(title, author) {}
+function ToDo(id, content, isDone, category, tags) {}
 
+/** create */
 /**
- * Both of these will link to the bar function.
- * @see {@link bar}
- * @see bar
+ *
+ * @param {number} id
+ * @param {string} content
+ * @param {boolean} isDone
+ * @param {string} category
+ * @param {Array<string?>} tags
+ * @return {object}
  */
-function foo() {}
 
-// Use the inline {@link} tag to include a link within a free-form description.
-/**
- * @see {@link foo} for further information.
- * @see {@link http://github.com|GitHub}
- */
-function bar() {}
+ToDo.prototype.createTodo = function (id, content, isDone, category, tags) {};
 
+/** Read */
 /**
- * Generic dairy product.
- * @constructor
+ * @return {void}
+ * @return {Array<object?>?}
  */
-function DairyProduct() {}
+ToDo.prototype.readAll = function () {};
+/**
+ *
+ * @param {number} id
+ * @return {object}
+ */
+ToDo.prototype.findById = function (id) {};
 
+/** Update */
 /**
- * Check whether the dairy product is solid at room temperature.
- * @abstract
- * @return {boolean}
+ *
+ * @param {string} content : ;
+ * @param {boolean} isDone
+ * @param {string} category
+ * @param {Array<string?>} tags
+ * @return {void}
  */
-DairyProduct.prototype.isSolid = function () {
-	throw new Error('must be implemented by subclass!');
-};
+ToDo.prototype.updateAllExceptId = function (
+  content,
+  isDone,
+  category,
+  tags
+) {};
+/**
+ *
+ * @param {Array<string?>} tags
+ * @return {void}
+ */
+ToDo.prototype.updateTags = function (tags) {};
 
+/** Delete */
 /**
- * Cool, refreshing milk.
- * @constructor
- * @augments DairyProduct
+ *
+ * @param {number} id
+ * @return {void}
  */
-function Milk() {}
-
+ToDo.prototype.deleteById = function (id) {};
 /**
- * Check whether milk is solid at room temperature.
- * @return {boolean} Always returns false.
+ * @return {void}
  */
-Milk.prototype.isSolid = function () {
-	return false;
-};
+ToDo.prototype.deleteAll = function () {};
+/**
+ *
+ * @param {string} tagName
+ * @return {void}
+ */
+ToDo.prototype.deleteTagByName = function (tagName) {};
+/**
+ * @return {void}
+ */
+ToDo.prototype.deleteAllTags = function () {};
