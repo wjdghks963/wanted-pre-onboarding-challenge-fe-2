@@ -1,4 +1,4 @@
-let AllToDos = new Array();
+const AllToDos = [];
 
 /**
  * @constructor
